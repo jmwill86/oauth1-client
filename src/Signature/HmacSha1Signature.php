@@ -11,7 +11,7 @@ class HmacSha1Signature extends Signature implements SignatureInterface
      */
     public function method()
     {
-        return 'HMAC-SHA1';
+        return 'HMAC-SHA256';
     }
 
     /**
@@ -35,6 +35,6 @@ class HmacSha1Signature extends Signature implements SignatureInterface
      */
     protected function hash($string)
     {
-        return hash_hmac('sha1', $string, $this->key(), true);
+        return hash_hmac('sha256', $string, $this->key(), true);
     }
 }
